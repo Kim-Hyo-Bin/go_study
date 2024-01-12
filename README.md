@@ -1,2 +1,11 @@
 # go_study
-study
+
+1. tutorial
+
+2. go routine / channel / context
+
+3. http&gin
+
+4. gocorn
+
+5. memory
