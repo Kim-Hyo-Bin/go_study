@@ -5,7 +5,7 @@ import (
 )
 
 type Animal struct {
-	name string
+	name            string
 	age, hand, foot int
 }
 
@@ -18,7 +18,6 @@ func main() {
 
 	fmt.Println(dog)
 	fmt.Println(dog.sum_limbs())
-
 
 	monkey := Animal{"marry", 3, 2, 2}
 

@@ -11,7 +11,7 @@ type Farm interface {
 
 type Animal struct {
 	name string
-	age int
+	age  int
 	meat int
 }
 
@@ -20,7 +20,7 @@ type Fish struct {
 }
 
 func (ani Animal) price() int {
-	return ani.meat*1000
+	return ani.meat * 1000
 }
 func (ani Animal) alive() bool {
 	return false
@@ -34,11 +34,11 @@ func (fish Fish) alive() bool {
 	return true
 }
 
-func showPrice(ani ...Farm){
+func showPrice(ani ...Farm) {
 	for _, s := range ani {
 		tmp := s.price()
 		fmt.Println(s, tmp)
-		
+
 	}
 }
 func main() {
@@ -46,12 +46,7 @@ func main() {
 	cow2 := Animal{"1+", 1, 600}
 	fish1 := Fish{"fisssh"}
 	fish2 := Fish{"fisssssssh"}
-	
+
 	showPrice(cow1, cow2, fish1, fish2)
-	
+
 }
-
-
-
-
-
