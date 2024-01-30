@@ -1,21 +1,21 @@
 package main
 
 import (
-	"fmt"
-    "net/http"
-
-    "github.com/gorilla/mux"
+	"github.com/gin-gonic/gin"
+	"net/http"
 )
 
 func main() {
-    router := mux.NewRouter()
+	// Gin 엔진 초기화
+	router := gin.Default()
 
-    router.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-        fmt.Fprintf(w, "Hello, Go Modules with Gorilla Mux!")
-    })
+	// 라우팅 설정
+	router.GET("/", func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{
+			"message": "Hello World!",
+		})
+	})
 
-    http.Handle("/", router)
-
-    fmt.Println("Server is running on :8080")
-    http.ListenAndServe(":8080", nil)
+	// 웹 서버 시작
+	router.Run(":8080")
 }
